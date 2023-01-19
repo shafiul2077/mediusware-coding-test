@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Variant;
+use App\Models\ProductVariant;
+use App\Models\ProductVariantPrice;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -47,10 +49,17 @@ class ProductController extends Controller
      * @param \App\Models\Product $product
      * @return \Illuminate\Http\Response
      */
-    public function show($product)
+    public function show()
     {
+        $productShow= Product :: paginate(5);
+        $productShowVariant= ProductVariantPrice:: get();
+        $variantShow= ProductVariant :: all();
+        $variantIdShow= Variant :: all();
+
+        return view('products.index',compact('productShow','productShowVariant','variantShow','variantIdShow'));
 
     }
+
 
     /**
      * Show the form for editing the specified resource.

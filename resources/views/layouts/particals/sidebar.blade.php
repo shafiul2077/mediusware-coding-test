@@ -56,9 +56,9 @@
                 <a class="collapse-item {{ url()->current() == route('product-variant.index') ? 'active' : '' }}"
                    href="{{ route('product-variant.index') }}">Variant</a>
                 <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item {{ url()->current() == route('product.create') ? 'active' : '' }}" href="{{ route('product.create') }}">Create
+                <a class="collapse-item {{--{{ url()->current() == route('product.create') ? 'active' : '' }}--}}" href="{{--{{ route('product.create') }}--}}">Create
                     Product</a>
-                <a class="collapse-item {{ url()->current() == route('product.index') ? 'active' : '' }}" href="{{ route('product.index') }}">All
+                <a class="collapse-item {{--{{ url()->current() == route('product.index') ? 'active' : '' }}--}}" href="{{--{{ route('product.index') }}--}}">All
                     Product</a>
             </div>
         </div>

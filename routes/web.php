@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::post('/dropzone', 'HomeController@index')->name('file-upload');
 
 Route::middleware('auth')->group(function () {
     Route::resource('product-variant', 'VariantController');
-    Route::resource('product', 'ProductController');
+    Route::get('product', 'ProductController@show');
     Route::resource('blog', 'BlogController');
     Route::resource('blog-category', 'BlogCategoryController');
 });
